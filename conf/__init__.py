@@ -3,6 +3,7 @@
 import os
 
 import logging as _logging
+
 _logger = _logging.getLogger(__name__)
 
 master_host = "***REMOVED***"
@@ -82,6 +83,10 @@ liquid_secret_key = os.getenv("LIQUID_SECRET_KEY")
 kraken_api_key = os.getenv("KRAKEN_API_KEY")
 kraken_secret_key = os.getenv("KRAKEN_SECRET_KEY")
 
+# Nash Tests
+nash_api_key = os.getenv("NASH_API_KEY")
+nash_secret_key = os.getenv("NASH_SECRET_KEY")
+
 # Wallet Tests
 test_erc20_token_address = os.getenv("TEST_ERC20_TOKEN_ADDRESS")
 web3_test_private_key_a = os.getenv("TEST_WALLET_PRIVATE_KEY_A")
@@ -91,28 +96,25 @@ web3_test_private_key_c = os.getenv("TEST_WALLET_PRIVATE_KEY_C")
 coinalpha_order_book_api_username = "***REMOVED***"
 coinalpha_order_book_api_password = "***REMOVED***"
 
-kafka_2 = {
-    "bootstrap_servers": "***REMOVED***",
-    "zookeeper_servers": "***REMOVED***"
-}
+kafka_2 = {"bootstrap_servers": "***REMOVED***", "zookeeper_servers": "***REMOVED***"}
 
 
 try:
-    from .config_local import *             # noqa: F401, F403
+    from .config_local import *  # noqa: F401, F403
 except ModuleNotFoundError:
     pass
 
 try:
-    from .web3_wallet_secret import *       # noqa: F401, F403
+    from .web3_wallet_secret import *  # noqa: F401, F403
 except ModuleNotFoundError:
     pass
 
 try:
-    from .binance_secret import *           # noqa: F401, F403
+    from .binance_secret import *  # noqa: F401, F403
 except ModuleNotFoundError:
     pass
 
 try:
-    from .coinbase_pro_secrets import *     # noqa: F401, F403
+    from .coinbase_pro_secrets import *  # noqa: F401, F403
 except ModuleNotFoundError:
     pass

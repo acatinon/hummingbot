@@ -16,10 +16,8 @@ from hummingbot.core.data_type.order_book_message import OrderBookMessage
 from hummingbot.logger import HummingbotLogger
 
 from hummingbot.market.nash.nash_order_book import NashOrderBook
+from hummingbot.market.nash.nash_constants import WS_URL, HTTP_URL, HEADERS
 
-HTTP_URL = "https://app.nash.io/api/graphql"
-WS_URL = "wss://app.nash.io/api/socket/websocket"
-HEADERS = {"Content-Type": "application/json"}
 
 LIST_MARKETS = gql(
     """
